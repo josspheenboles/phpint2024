@@ -6,9 +6,9 @@ $name='aya ali';//global var
 function fun2()
 {
     echo 'name';
-    $name2='fun'; //local var
-    echo $name2.'----';
-    // echo $name;//print global name
+    // $name2='fun'; //local var
+    // echo $name2.'----';
+    // // echo $name;//print global name
     // $name='sdskdkl';//access var cann't modified
 }
 $name='sara';
