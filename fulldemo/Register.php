@@ -6,17 +6,18 @@ if($_SERVER['REQUEST_METHOD']=='GET')
 <h3>Please choose your file </h3>
 <label>File </label>
 <input type="file" name="file" />
-</br><label>Username</label><input type="text" name="username"/>
-</br><label>Password</label><input type="password" name="password"/>
+</br><label>Username</label><input required type="text" name="username"/>
+</br><label>Password</label><input required type="password" name="password"/>
 <input type="submit"/>
 </form>';
 }
 else
 {
-    
-    if(!isset($_POST['username']) && !isset($_POST['password']))     
-    {
 
+    if(!empty($_POST['username']) && !empty($_POST['password']))     
+    {
+        //insert Data into db 
+        include_once('MysqliProcedural.php');
     }
     else
     {
