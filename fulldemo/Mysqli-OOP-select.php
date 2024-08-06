@@ -20,6 +20,7 @@ try {
     {
         
         $trainees = $conn2->query("select * from trainee");
+        var_dump($trainees);
         $rowCount= $trainees->num_rows;
         if($rowCount>0)
         {

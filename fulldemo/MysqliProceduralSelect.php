@@ -1,4 +1,5 @@
 <?php
+//configuration
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASSWORD", "123");
@@ -14,6 +15,7 @@ if (mysqli_connect_errno()) {
 else
 {
     $trainees = mysqli_query($conn,"select * from trainee");
+    var_dump($trainees);
     $rowCount= mysqli_num_rows($trainees);
     if($rowCount>0)
     {
@@ -24,13 +26,17 @@ else
             <th>Password</th>
             <th>Actions</th>
         </tr>';
+
         while ($row = mysqli_fetch_assoc($trainees)) {
-            // var_dump($row);
+            var_dump($row);
            echo '<tr>
     <td>'.$row['id'].'</td>
     <td>'.$row['username'].'</td>
     <td>'.$row['password'].'</td>
-    <td>'.$row['actions'].'</td>
+    <td>
+    <a href="update.php?id='.$row['id'].'">update</a></br>
+    <a href="delete.php">Delete</a></br>
+    </td>
 </tr>';
 }
             echo '</table>';
